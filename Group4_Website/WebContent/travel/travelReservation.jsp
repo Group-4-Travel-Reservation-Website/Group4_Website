@@ -188,15 +188,95 @@
 			</tr>
 		</table>
 	</div>
-	<div class="res_description">
+	<div class="res_description" style="height: 240px;">
 		요청 사항
 
-		<textarea style="border: 1px solid gray; height: 180px; width:1360px; margin-top: 20px; font-size: 14px; padding-top: 10px; padding-left: 10px;"
-				placeholder="요청사항을 적어주세요"></textarea>
+		<textarea
+			style="border: 1px solid gray; height: 180px; width: 1360px; margin-top: 20px; font-size: 14px; padding-top: 10px; padding-left: 10px;"
+			placeholder="요청사항을 적어주세요"></textarea>
+
+	</div>
+	<div class="res_description" style="height: 430px;">
+		필수 약관 동의
+		<div id="service_agreement">
+			<div style="font-size: 20px;">
+				<input type="checkbox" name="agreement" value="agreement"
+					style="margin-bottom: 20px; color: red;">&nbsp;&nbsp;약관에 모두
+				동의합니다.
+			</div>
+			<div id="sa_choose_block">
+				<div class="sa_des_block">여행 약관</div>
+				<div class="sa_des_block">개인정보 수집 및 이용</div>
+				<div class="sa_des_block">고유식별정보 수집 및 이용</div>
+				<div class="sa_des_block">개인정보 제 3자 제공</div>
+			</div>
+			<div class="sa_detail">
+				<p>
+					당사는 개인정보보호법을 준수하며 서비스 수행의 목적에 한하여 최소한의 고유식별정보를 수집, 이용하며 기준은 아래와
+					같습니다. <br>1. 고유식별정보 수집/이용 목적: 항공사 마일리지 적립 및 사용, 해외여행 상품예약시
+					출국가능 여부파악 및 여행자 본인식별, <br>2. 수집하는 고유식별정보의 항목: 여권번호 (여권만료일) <br>3.
+					고유식별정보의 보유 및 이용기간: 여행상품 서비스 수행목적의 완료시점까지 동의거부권 개인정보주체자(이용자)께서는
+					고유식별정보(여권번호 등)에 대한 수집동의를 거부할 권리가 있습니다.
+				</p>
+			</div>
+			<input type="checkbox" class="sa_checkbox">&nbsp;&nbsp;여행 약관에
+			동의합니다.&nbsp;&nbsp; <input type="checkbox" class="sa_checkbox">&nbsp;&nbsp;개인정보
+			수집 및 이용에 동의합니다.&nbsp;&nbsp; <input type="checkbox"
+				class="sa_checkbox">&nbsp;&nbsp;고유식별정보 수집 및 이용에
+			동의합니다.&nbsp;&nbsp; <input type="checkbox" class="sa_checkbox">&nbsp;&nbsp;개인정보
+			제 3자 제공에 동의합니다.&nbsp;&nbsp;
+		</div>
 
 	</div>
 
+	<div id="total_price">
+		<table id="tp_table">
+			<tr>
+				<th colspan="3" class="tp_table_th"
+					style="text-align: left; border-right: 1.5px solid #EAEAEA;">상품
+					금액</th>
+				<th colspan="2" class="tp_table_th"
+					style="border-right: 1.5px solid #EAEAEA;">할인 금액</th>
+				<th class="tp_table_th">총액</th>
+			</tr>
+			<tr>
+				<td class="tp_table_td">성인</td>
+				<td style="text-align: right;" class="tp_table_td">789,000원</td>
+				<td class="tp_table_td" style="border-right: 1.5px solid #EAEAEA;">x
+					1명</td>
+				<td rowspan="3" class="tp_table_td" style="text-align: center;">쿠폰
+					할인</td>
+				<td rowspan="3" class="tp_table_td"
+					style="border-right: 1.5px solid #EAEAEA;">-원</td>
+				<td rowspan="3"
+					style="color: red; font-size: 16px; text-align: center; font-weight: bold;">789,000원</td>
+			</tr>
+			<tr>
+				<td class="tp_table_td">아동</td>
+				<td style="text-align: right;" class="tp_table_td">789,000원</td>
+				<td class="tp_table_td" style="border-right: 1.5px solid #EAEAEA;">x
+					0명</td>
 
+			</tr>
+			<tr>
+				<td class="tp_table_td">유아</td>
+				<td class="tp_table_td" style="text-align: right;">150,0000원</td>
+				<td class="tp_table_td" style="border-right: 1.5px solid #EAEAEA;">x
+					0명</td>
+
+			</tr>
+		</table>
+		<div id="tp_bottom">
+			<ul>
+				<li>-항공권 또는 항공권이 포함된 상품의 경우, 표시되는 상품요금은 세금 및 예상 유류할증료가 포함된
+					가격이며, 유류할증료는 유가 및 환율 등에 따라 변동될 수 있습니다.</li>
+				<li>-아동/유아 기준은 항공사마다 상이하여, 예약 후 최종 확정됩니다</li>
+			</ul>
+		</div>
+	</div>
+	<div id="reservation_btn" >
+		<input type="button" id="r_ok" value="예약하기" />
+	</div>
 </div>
 
 <jsp:include page="../include/footer.jsp" />

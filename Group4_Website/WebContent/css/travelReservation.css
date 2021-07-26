@@ -4,7 +4,8 @@
 	margin-top: 20px;
 	margin-right: 95px;
 	margin-left: 95px;
-	height: 2800px;
+	margin-bottom:50px;
+	height: 3100px;
 	background-color: white;
 }
 
@@ -69,34 +70,133 @@
 	font-weight: normal;
 	font-family: Arial, Helvetica, sans-serif;
 	height: 300px;
-	width:1370px;
+	width: 1370px;
 	margin-top: 20px;
 	border-top: 3px solid black;
 }
 
-
-.res_table_td_1{
+.res_table_td_1 {
 	border-bottom: 2px solid #EAEAEA;
-	padding-left: 10px; 
+	padding-left: 10px;
 	border-right: 2px solid #EAEAEA;
 	font-size: 16px;
 	font-weight: bold;
-	
 	background-color: #F6F6F6;
 }
-.res_table_td_2{
+
+.res_table_td_2 {
 	border-bottom: 2px solid #EAEAEA;
-	padding-left: 10px; 
-	
-	height:80px;
-	padding-right: 10px; 
+	padding-left: 10px;
+	height: 80px;
+	padding-right: 10px;
 }
 
-.input_table{
+.input_table {
 	width: 150px;
 	height: 30px;
 	color: gray;
 	padding-left: 5px;
+}
 
+#service_agreement {
+	margin-top: 20px;
+	height: 350px;
+	width: 96%;
+	padding: 20px;
+	padding-top: 30px;
+	border: 2px solid #D5D5D5;
+	font-size: 14px;
+}
 
+#sa_choose_block {
+	height: 100px;
+	width: 100%;
+}
+
+.sa_des_block {
+	height: 65px;
+	width: 24.8%;
+	margin: 5px 1px;
+	line-height: 60px; float : left;
+	text-align: center;
+	margin: 10px 1px;
+	font-size: 16px;
+	background-color: #EAEAEA;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: black;
+	float: left;
+}
+
+.sa_detail {
+	height: 100px;
+	width: 1280px;
+	background-color: #F6F6F6;
+	font-size: 15px;
+	font-weight: 500;
+	padding: 20px;
+	line-height: 30px;
+	overflow: auto;
+}
+
+.sa_checkbox {
+	margin-top: 30px;
+}
+
+#total_price {
+	height: 350px;
+	width: 1365px;
+	border: 2px solid #E4E4E4;
+	margin-top: 40px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#tp_table {
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+}
+
+.tp_table_th {
+	width: 200px;
+	font-weight: bold;
+	font-size: 16px;
+	height: 50px;
+}
+
+.tp_table_td {
+	height: 30px;
+	font-size: 14px;
+	padding-left: 3px;
+}
+
+#tp_bottom {
+	background-color: #E7E7E7;
+	width: 98%;
+	height: 85px;
+	margin-top: 55px;
+	padding-left: 30px;
+	padding-top: 20px;
+	font-size: 12px;
+	line-height: 20px;
+	font-weight: 500;
+}
+
+#reservation_btn{
+	
+	margin-top: 50px;
+	height: 80px;
+	text-align: center;
+	
+}
+#r_ok{
+	margin-top:10px;
+	width: 200px;
+	height: 60px;
+	background-color: #FFC72C;
+	border:0;
+	font-size: 18px;
+	font-weight: bold;
 }
