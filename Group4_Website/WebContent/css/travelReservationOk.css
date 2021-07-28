@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+#travel_reservation_ok {
+	margin-top: 20px;
+	margin-right: 95px;
+	margin-left: 95px;
+	margin-bottom:50px;
+	height: 2500px;
+	background-color: white;
+}
+
+.travel_reservation_ok_p{
+	font-size: 16px; 
+	text-align: center;
+	line-height: 30px;
+	
+}
