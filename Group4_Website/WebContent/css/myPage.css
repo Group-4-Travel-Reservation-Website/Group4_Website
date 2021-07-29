@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+#my_page {
+	margin-top: 20px;
+	margin-right: 95px;
+	margin-left: 95px;
+	height: 1100px;
+	background-color: white;
+	margin-bottom: 20px;
+}
+
+.tb_chk_res {
+	width: 200px;
+	height: 30px;
+	background-color: #D5D5D5;
+	font-size: 16px;
+	text-align: center;
+	font-weight: bold;
+}
+
+#ask_res {
+	width: 49%;
+	float: left;
+	height: 330px;
+	padding-top: 10px;
+}
+
+#ask_ser {
+	width: 49%;
+	float: right;
+	height: 330px;
+	padding-top: 10px;
+}
+
+.tb_ask_res {
+	height: 30px;
+	background-color: #D5D5D5;
+	font-size: 16px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.ask_ser_td{
+	width: 33%;
+	height:180px;
+
+	
+}
