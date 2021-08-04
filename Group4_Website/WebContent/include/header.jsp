@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="../css/travelDescription.css" />
 <link rel="stylesheet" type="text/css" href="../css/travelReservation.css" />
 <link rel="stylesheet" type="text/css" href="../css/myPage.css" />
+<link rel="stylesheet" type="text/css" href="../css/editPersonalInfo.css" />
 
 <body>
 
