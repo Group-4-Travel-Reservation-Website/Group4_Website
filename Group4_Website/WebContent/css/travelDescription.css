@@ -109,7 +109,7 @@
 }
 
 .main_schedule {
-	background-color: white;
+	
 	height: 230px;
 	margin: 18px 18px 0px 18px;
 	border-bottom: solid 2px gray;
@@ -393,16 +393,11 @@
 	margin-left: 10px;
 }
 
-#total_price {
-	margin-top: 20px;
-	margin-left: 15px;
-	width: 280px;
-	height: 50px;
-}
+
 
 #btn_reservation {
 	margin-top: 20px;
-	margin-left: 55px;
+	margin-left: 80px;
 	width: 250px;
 	height: 60px;
 	font-family: Arial, Helvetica, sans-serif;

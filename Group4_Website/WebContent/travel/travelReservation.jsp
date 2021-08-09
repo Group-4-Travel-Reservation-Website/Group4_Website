@@ -196,7 +196,8 @@
 			placeholder="요청사항을 적어주세요"></textarea>
 
 	</div>
-	<div class="res_description" style="height: 430px;">
+
+	<div class="res_description" style="height: 450px;">
 		필수 약관 동의
 		<div id="service_agreement">
 			<div style="font-size: 20px;">
@@ -204,13 +205,15 @@
 					style="margin-bottom: 20px; color: red;">&nbsp;&nbsp;약관에 모두
 				동의합니다.
 			</div>
-			<div id="sa_choose_block">
-				<div class="sa_des_block">여행 약관</div>
-				<div class="sa_des_block">개인정보 수집 및 이용</div>
-				<div class="sa_des_block">고유식별정보 수집 및 이용</div>
-				<div class="sa_des_block">개인정보 제 3자 제공</div>
-			</div>
-			<div class="sa_detail">
+
+			<input type="radio" name="tabmenu" id="tab01" checked> <label
+				for="tab01">여행 약관</label> <input type="radio" name="tabmenu"
+				id="tab02"> <label for="tab02">개인정보 수집 및 이용</label> <input
+				type="radio" name="tabmenu" id="tab03"> <label for="tab03">고유식별정보
+				수집 및 이용</label> <input type="radio" name="tabmenu" id="tab04"> <label
+				for="tab04">개인저보 제 3자 제공</label>
+
+			<div class="conbox con1">
 				<p>
 					당사는 개인정보보호법을 준수하며 서비스 수행의 목적에 한하여 최소한의 고유식별정보를 수집, 이용하며 기준은 아래와
 					같습니다. <br>1. 고유식별정보 수집/이용 목적: 항공사 마일리지 적립 및 사용, 해외여행 상품예약시
@@ -219,6 +222,31 @@
 					고유식별정보(여권번호 등)에 대한 수집동의를 거부할 권리가 있습니다.
 				</p>
 			</div>
+			<div class="conbox con2">
+				<p>
+					1. 개인정보 수집 및 이용목적 <br> 여행상품의 예약, 항공권/호텔 등의 예약 및 출입국 정보확인,
+					예약내역의 확인 및 상담, 컨텐츠 제공, 여행서비스 이용 시 회원의 우대, 투어캐쉬 적립/조회/사용 및 이에 관한 안내,
+					구매 및 요금결제, 물품배송 또는 청구서 등 발송, 분쟁조정을 위한 기록보존, 불만처리, 민원처리, 고지사항 전달 등 <br>
+					2. 개인정보 수집 항목 및 보유 및 이용기간<br> 가. 회사는 적법한 절차와 법적 기준에 의거하여 고객의
+					개인정보를 수집하고 있으며, 고객의 서비스이용에 필요한 최소한의 정보만을 수집하고 있습니다. 정보통신망법과
+					개인정보보호법에 의거하여 수집, 이용을 제한하고 있습니다.<br> 나. 회사는 고객의 인권을 침해할 우려가 있는
+					민감한 개인정보항목(인종, 종교, 사상, 정치적 성향, 건강상태, 성생활정보 등)은 수집하지 않습니다.
+				</p>
+			</div>
+			<div class="conbox con3">
+				개인정보의 제 3자 제공 (마케팅 목적으로 활용되지 않음) ※<br> 예약진행 시 입력하신 개인정보는 선택하신
+				해당 행사업체에만 제공됩니다. 회사는 회원님의 동의가 있거나 관련 법령의 규정에 의한 경우를 제외하고 어떠한 경우에도
+				‘개인정보 수집 및 이용목적’ 에서 고지한 범위를 넘어서거나, 해당되는 회원 서비스 영역과 무관한 타 기업/기관에
+				제공하거나 이용하지 않습니다. <br>단, 제공의 필요시 회원의 동의를 얻어 회원 서비스 수행에 직접적으로
+				관계되는 업체에 한해서 제한적인 조건으로 개인정보가 제공되며 내용은 다음과 같습니다.
+			</div>
+			<div class="conbox con4">
+				[취소 위약금 증빙제공 및 차액 환급]<br> 고객은 계약취소와 관련하여 취소수수료(여행사 인건비포함)에 대한
+				구체적인 증빙과 설명을 여행사에 요구할 수 있으며,<br> 여행사는 관련 증빙과 설명을 제시하고, 취소 수수료
+				규정과 차액이 있는 경우 이를 환급합니다.
+			</div>
+
+
 			<input type="checkbox" class="sa_checkbox">&nbsp;&nbsp;여행 약관에
 			동의합니다.&nbsp;&nbsp; <input type="checkbox" class="sa_checkbox">&nbsp;&nbsp;개인정보
 			수집 및 이용에 동의합니다.&nbsp;&nbsp; <input type="checkbox"
@@ -274,7 +302,7 @@
 			</ul>
 		</div>
 	</div>
-	<div id="reservation_btn" >
+	<div id="reservation_btn">
 		<input type="button" id="r_ok" value="예약하기" />
 	</div>
 </div>

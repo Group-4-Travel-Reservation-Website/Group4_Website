@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="../css/myPage.css" />
 <link rel="stylesheet" type="text/css" href="../css/editPersonalInfo.css" />
 <link rel="stylesheet" type="text/css" href="../css/customerService.css" />
-
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <body>
 
 

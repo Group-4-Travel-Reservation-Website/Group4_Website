@@ -1,6 +1,13 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <jsp:include page="../include/header.jsp" />
 
+<script>
+    function fnMove(seq){
+        var offset = $("#div" + seq).offset();
+        $('html, body').animate({scrollTop : (offset.top-120)}, 400);
+    }
+</script>
+
 <div id="travel_description">
 	<div id="des_top">
 		<div id="category">
@@ -25,14 +32,14 @@
 				style="border-radius: 5px; margin: 15px;">
 		</div>
 		<div id="choose_block">
-			<div class="des_block">여행 주요일정</div>
-			<div class="des_block">포함/불포함</div>
-			<div class="des_block">여행 상세정보</div>
-			<div class="des_block">기타</div>
-			<div class="des_block">여행후기</div>
+			<div class="des_block" onclick="fnMove('1')"> 주요일정</div>
+			<div class="des_block" onclick="fnMove('2')">포함/불포함</div>
+			<div class="des_block" onclick="fnMove('3')">여행 상세정보</div>
+			<div class="des_block" onclick="fnMove('4')">기타</div>
+			<div class="des_block" onclick="fnMove('5')">여행후기</div>
 		</div>
 
-		<div class="main_schedule">
+		<div class="main_schedule" id="div1">
 			여행 주요 일정
 			<table id="table_schedule">
 				<tr>
@@ -85,7 +92,7 @@
 				문의
 			</div>
 		</div>
-		<div class="main_schedule" style="height: 400px;">
+		<div class="main_schedule" style="height: 400px;" id="div2">
 			포함/불포함 내역
 			<div class="option_2" style="color: #22741C;">
 				포함 내역
@@ -106,7 +113,7 @@
 		</div>
 
 
-		<div class="main_schedule" style="height: 1500px;">
+		<div class="main_schedule" style="height: 1500px;" id="div3">
 			여행 상세 정보
 			<h2 style="font-size: 16px; margin: 20px 0px 0px 10px;">01 호텔정보</h2>
 			<div id="hotel_information">
@@ -160,7 +167,7 @@
 
 
 		</div>
-		<div class="main_schedule" style="height: 650px;">
+		<div class="main_schedule" style="height: 650px;" id="div4">
 			기타 정보
 			<ul id="information">
 				<li>여행 중 유의사항</li> ▶ 괌 e-종합가이드북:
@@ -191,7 +198,7 @@
 
 			</ul>
 		</div>
-		<div class="main_schedule" style="height: 200px; border: none;">
+		<div class="main_schedule" style="height: 200px; border: none;" id="div5">
 			고객 후기
 			<h1 style="font-size: 14px; text-align: center; margin-top: 50px;">등록된
 				후기가 없습니다.</h1>
@@ -202,7 +209,7 @@
 
 
 	<div id="reservation_form">
-		<div class="rf" style="margin-top: 40px;">
+		<div class="rf" style="margin-top: 40px; ">
 			1. 출발-도착 일자
 			<table style="margin-top: 20px; margin-left: 17px;">
 				<tr>
@@ -218,19 +225,19 @@
 			<input type="button" id="change_date" value="출발일 변경" />
 
 		</div>
-		<div class="rf">
+		<div class="rf"  >
 			2. 항공 선택 <br> <select id="select_option">
 				<option>진에어</option>
 				<option>대한항공</option>
 				<option>아시아나</option>
 			</select>
 		</div>
-		<div class="rf">
+		<div class="rf" >
 			3.호텔 선택 <br> <select id="select_option">
 				<option>괌 PIC</option>
 			</select>
 		</div>
-		<div class="rf">
+		<div class="rf" style=" ">
 			4. 여행 인원 선택하기 (1인 기본 가격)
 			<table id="choose_person">
 				<tr style="height: 30px;">
@@ -268,11 +275,11 @@
 				</tr>
 			</table>
 		</div>
-		<div class="rf" style="border-bottom: solid 3px;">
-			<table id="total_price">
+		<div class="rf" style="border-bottom: solid 3px;  ">
+			<table style="width: 300px; height: 50px; margin-top: 0px;">
 				<tr>
 					<td style="font-size: 16px;">총 금액</td>
-					<td style="font-size: 26px; color: red; text-align: right;">1,999,900</td>
+					<td style="font-size: 26px; color: red; text-align: right; width: 100px;">1,999,900</td>
 					<td style="font-size: 16px;">원</td>
 				</tr>
 			</table>
