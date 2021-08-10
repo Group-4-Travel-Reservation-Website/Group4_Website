@@ -1,6 +1,38 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <jsp:include page="../include/header.jsp" />
 
+
+<script>
+function selectAll(selectAll)  {
+	  const checkboxes 
+	       = document.getElementsByName('chkbox');
+	  
+	  checkboxes.forEach((checkbox) => {
+	    checkbox.checked = selectAll.checked;
+	  })
+	} //https://hianna.tistory.com/433
+	
+function checkSelectAll()  {
+	  // 전체 체크박스
+	  const checkboxes 
+	    = document.querySelectorAll('input[name="chkbox"]');
+	  // 선택된 체크박스
+	  const checked 
+	    = document.querySelectorAll('input[name="chkbox"]:checked');
+	  // select all 체크박스
+	  const selectAll 
+	    = document.querySelector('input[name="selectall"]');
+	  
+	  if(checkboxes.length === checked.length)  {
+	    selectAll.checked = true;
+	  }else {
+	    selectAll.checked = false;
+	  }
+
+	}
+</script>
+
+
 <div id="travel_reservation">
 
 	<div id="res_top">
@@ -197,13 +229,14 @@
 
 	</div>
 
+
 	<div class="res_description" style="height: 450px;">
 		필수 약관 동의
 		<div id="service_agreement">
 			<div style="font-size: 20px;">
-				<input type="checkbox" name="agreement" value="agreement"
-					style="margin-bottom: 20px; color: red;">&nbsp;&nbsp;약관에 모두
-				동의합니다.
+				<input type="checkbox" name="selectall" value="selectall"
+					onclick='selectAll(this)' style="margin-bottom: 20px; color: red;">&nbsp;&nbsp;약관에
+				모두 동의합니다.
 			</div>
 
 			<input type="radio" name="tabmenu" id="tab01" checked> <label
@@ -247,12 +280,17 @@
 			</div>
 
 
-			<input type="checkbox" class="sa_checkbox">&nbsp;&nbsp;여행 약관에
-			동의합니다.&nbsp;&nbsp; <input type="checkbox" class="sa_checkbox">&nbsp;&nbsp;개인정보
-			수집 및 이용에 동의합니다.&nbsp;&nbsp; <input type="checkbox"
-				class="sa_checkbox">&nbsp;&nbsp;고유식별정보 수집 및 이용에
-			동의합니다.&nbsp;&nbsp; <input type="checkbox" class="sa_checkbox">&nbsp;&nbsp;개인정보
-			제 3자 제공에 동의합니다.&nbsp;&nbsp;
+			<input type="checkbox" class="sa_checkbox" name="chkbox"
+				onclick='checkSelectAll()' id="chkbox1"> <label
+				for="chkbox1">여행 약관에 동의합니다.</label> <input type="checkbox"
+				class="sa_checkbox" name="chkbox" onclick='checkSelectAll()'
+				id="chkbox2"> <label for="chkbox2">개인정보 수집 및 이용에
+				동의합니다.</label> <input type="checkbox" class="sa_checkbox" name="chkbox"
+				onclick='checkSelectAll()' id="chkbox3"> <label
+				for="chkbox3">고유식별정보 수집 및 이용에 동의합니다.</label> <input type="checkbox"
+				class="sa_checkbox" name="chkbox" onclick='checkSelectAll()'
+				id="chkbox4"> <label for="chkbox4">개인정보 제 3자 제공에
+				동의합니다.</label>
 		</div>
 
 	</div>
