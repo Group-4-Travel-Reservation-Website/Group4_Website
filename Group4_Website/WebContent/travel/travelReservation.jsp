@@ -7,7 +7,7 @@ function selectAll(selectAll)  {
 	  const checkboxes 
 	       = document.getElementsByName('chkbox');
 	  
-	  checkboxes.forEach((checkbox) => {
+	  checkboxes.forEach((checkbox) =>{
 	    checkbox.checked = selectAll.checked;
 	  })
 	} //https://hianna.tistory.com/433

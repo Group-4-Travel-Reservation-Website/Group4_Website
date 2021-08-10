@@ -2,10 +2,49 @@
 <jsp:include page="../include/header.jsp" />
 
 <script>
-    function fnMove(seq){
-        var offset = $("#div" + seq).offset();
-        $('html, body').animate({scrollTop : (offset.top-120)}, 400);
-    }
+	function fnMove(seq) {
+		var offset = $("#div" + seq).offset();
+		$('html, body').animate({
+			scrollTop : (offset.top - 120)
+		}, 400);
+	} //상단 5개버튼 중 하나 클릭하면 해당 div로 이동
+
+	var slideIndex = 1;
+
+	$(document).ready(function(){
+		showSlides(slideIndex); 
+	 }); //시작하면 바로 보이게 하는 슬라이드 
+
+
+	function plusSlides(n) {
+		showSlides(slideIndex += n);
+	}// 왼쪽 오른쪽에 위치한 화살표 버튼을 누르면 슬라이드가 보이는 기능 
+
+	function currentSlide(n) {
+		showSlides(slideIndex = n);
+	} //아래 dot을 누르면 슬라이드가 변경되는 기능
+
+	function showSlides(n) {
+		var i;
+		var slides = document.getElementsByClassName("mySlides");
+		var dots = document.getElementsByClassName("dot");
+		if (n > slides.length) {
+			slideIndex = 1
+		}
+		if (n < 1) {
+			slideIndex = slides.length
+		}
+		for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		}
+		for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		}
+		slides[slideIndex - 1].style.display = "block";
+		dots[slideIndex - 1].className += " active";
+		
+	}
+	//https://kutar37.tistory.com/entry/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C%EC%87%BC-%EA%B5%AC%ED%98%84-cssjavascriptjquery
 </script>
 
 <div id="travel_description">
@@ -23,16 +62,37 @@
 	</div>
 
 	<div id="main_description">
-		<div style="text-align: center;">
-			<img src="../image/img1.jpg" width="30%" height="400"
-				style="border-radius: 5px; margin: 15px;"> <img
-				src="../image/img2.jpg" width="30%" height="400"
-				style="border-radius: 5px; margin: 15px;"> <img
-				src="../image/img3.jpg" width="30%" height="400"
-				style="border-radius: 5px; margin: 15px;">
+
+		<div class="slideshow-container">
+			<div class="mySlides fade">
+				<img src="../image/img1.jpg" height="400"
+					style="border-radius: 10px; width: 100%;">
+			</div>
+			<div class="mySlides fade">
+				<img src="../image/img2.jpg" height="400"
+					style="border-radius: 10px; width: 100%;">
+			</div>
+			<div class="mySlides fade">
+				<img src="../image/img3.jpg" height="400"
+					style="border-radius: 10px; width: 100%;">
+			</div>
+
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a> <a class="next"
+				onclick="plusSlides(1)">&#10095;</a>
+
 		</div>
+		<br>
+
+		<div style="text-align: center">
+			<span class="dot" onclick="currentSlide(1)"></span> <span class="dot"
+				onclick="currentSlide(2)"></span> <span class="dot"
+				onclick="currentSlide(3)"></span>
+		</div>
+
+
+
 		<div id="choose_block">
-			<div class="des_block" onclick="fnMove('1')"> 주요일정</div>
+			<div class="des_block" onclick="fnMove('1')">주요일정</div>
 			<div class="des_block" onclick="fnMove('2')">포함/불포함</div>
 			<div class="des_block" onclick="fnMove('3')">여행 상세정보</div>
 			<div class="des_block" onclick="fnMove('4')">기타</div>
@@ -118,7 +178,7 @@
 			<h2 style="font-size: 16px; margin: 20px 0px 0px 10px;">01 호텔정보</h2>
 			<div id="hotel_information">
 				<div id="hi_top">
-					<a href="#">괌 PIC</a>
+					<p>괌 PIC</p>
 				</div>
 				<div id="hi_middle">
 					괌 PIC <br> <img src="../image/img1.jpg" width="800px"
@@ -154,12 +214,11 @@
 							src="../image/img2.jpg" width="27%" height="200"
 							style="border-radius: 5px; margin: 15px;"> <img
 							src="../image/img3.jpg" width="27%" height="200"
-							style="border-radius: 5px; margin: 15px;">
-							
-							<br>루스키섬은 블라디보스톡에서 몇 km 떨어진 곳에 위치한 섬으로 동해 연안에 위치하고 있습니다.
-							<br> 섬의 이름은 동시베리아를 통치한 니콜라이 아무르 스키의 이름을 따서 붙여졌다고 합니다. 
-							<br>더불어 이 섬은 소련 시절, 군사기지로서 이용되었다는 점에서 상트페테르부르크의 크론슈타트에 비교되어 극동의 크론슈타트라고도 불리고 있습니다. 
-							<br>이곳은 지역 특성상 안개가 자주 끼기 때문에, 겨울에는 안개가 너무 심해 섬이 잘 보이지 않을 수도 있습니다.
+							style="border-radius: 5px; margin: 15px;"> <br>루스키섬은
+						블라디보스톡에서 몇 km 떨어진 곳에 위치한 섬으로 동해 연안에 위치하고 있습니다. <br> 섬의 이름은
+						동시베리아를 통치한 니콜라이 아무르 스키의 이름을 따서 붙여졌다고 합니다. <br>더불어 이 섬은 소련 시절,
+						군사기지로서 이용되었다는 점에서 상트페테르부르크의 크론슈타트에 비교되어 극동의 크론슈타트라고도 불리고 있습니다. <br>이곳은
+						지역 특성상 안개가 자주 끼기 때문에, 겨울에는 안개가 너무 심해 섬이 잘 보이지 않을 수도 있습니다.
 					</div>
 				</div>
 
@@ -198,7 +257,8 @@
 
 			</ul>
 		</div>
-		<div class="main_schedule" style="height: 200px; border: none;" id="div5">
+		<div class="main_schedule" style="height: 200px; border: none;"
+			id="div5">
 			고객 후기
 			<h1 style="font-size: 14px; text-align: center; margin-top: 50px;">등록된
 				후기가 없습니다.</h1>
@@ -209,7 +269,7 @@
 
 
 	<div id="reservation_form">
-		<div class="rf" style="margin-top: 40px; ">
+		<div class="rf" style="margin-top: 40px;">
 			1. 출발-도착 일자
 			<table style="margin-top: 20px; margin-left: 17px;">
 				<tr>
@@ -225,19 +285,19 @@
 			<input type="button" id="change_date" value="출발일 변경" />
 
 		</div>
-		<div class="rf"  >
+		<div class="rf">
 			2. 항공 선택 <br> <select id="select_option">
 				<option>진에어</option>
 				<option>대한항공</option>
 				<option>아시아나</option>
 			</select>
 		</div>
-		<div class="rf" >
+		<div class="rf">
 			3.호텔 선택 <br> <select id="select_option">
 				<option>괌 PIC</option>
 			</select>
 		</div>
-		<div class="rf" style=" ">
+		<div class="rf" style="">
 			4. 여행 인원 선택하기 (1인 기본 가격)
 			<table id="choose_person">
 				<tr style="height: 30px;">
@@ -275,11 +335,12 @@
 				</tr>
 			</table>
 		</div>
-		<div class="rf" style="border-bottom: solid 3px;  ">
+		<div class="rf" style="border-bottom: solid 3px;">
 			<table style="width: 300px; height: 50px; margin-top: 0px;">
 				<tr>
 					<td style="font-size: 16px;">총 금액</td>
-					<td style="font-size: 26px; color: red; text-align: right; width: 100px;">1,999,900</td>
+					<td
+						style="font-size: 26px; color: red; text-align: right; width: 100px;">1,999,900</td>
 					<td style="font-size: 16px;">원</td>
 				</tr>
 			</table>
