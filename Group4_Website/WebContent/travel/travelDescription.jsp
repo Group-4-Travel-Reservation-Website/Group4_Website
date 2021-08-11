@@ -11,10 +11,11 @@
 
 	var slideIndex = 1;
 
-	$(document).ready(function(){
-		showSlides(slideIndex); 
-	 }); //시작하면 바로 보이게 하는 슬라이드 
+	$(document).ready(function() {
+		showSlides(slideIndex);
+		schedule_btn('hm01');
 
+	}); //시작하면 바로 보이게 하는 슬라이드 
 
 	function plusSlides(n) {
 		showSlides(slideIndex += n);
@@ -42,7 +43,7 @@
 		}
 		slides[slideIndex - 1].style.display = "block";
 		dots[slideIndex - 1].className += " active";
-		
+
 	}
 	//https://kutar37.tistory.com/entry/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C%EC%87%BC-%EA%B5%AC%ED%98%84-cssjavascriptjquery
 </script>
@@ -171,21 +172,40 @@
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			function schedule_btn(e) {
+
+				var hi_middle = document.getElementsByClassName('hi_middle')
+				var hi_bottom = document.getElementsByClassName('hi_bottom')
+				for (var i = 0; i < hi_middle.length; i++) {
+					if (e == hi_middle[i].id) {
+						hi_middle[i].style.display = "block";
+						hi_bottom[i].style.display = "block";
+					} else {
+						hi_middle[i].style.display = "none";
+						hi_bottom[i].style.display = "none";
+					}
+
+				}
+			}
+		</script>
 
 
 		<div class="main_schedule" style="height: 1500px;" id="div3">
 			여행 상세 정보
 			<h2 style="font-size: 16px; margin: 20px 0px 0px 10px;">01 호텔정보</h2>
 			<div id="hotel_information">
-				<div id="hi_top">
-					<p>괌 PIC</p>
+				<div class="hi_top">
+					<button class="btn_class" onclick="schedule_btn('hm01')">괌
+						PIC</button>
+					<button class="btn_class" onclick="schedule_btn('hm02')">신라호텔</button>
 				</div>
-				<div id="hi_middle">
+				<div class="hi_middle" id="hm01">
 					괌 PIC <br> <img src="../image/img1.jpg" width="800px"
 						height="400px" style="margin-top: 30px;" />
 				</div>
 
-				<table id="hi_bottom">
+				<table class="hi_bottom" id="hb01">
 					<tr>
 						<td class="hi_bottom_detail">주소:</td>
 						<td class="hi_bottom_detail_2">210 Pale San Vitores Road,
@@ -200,15 +220,72 @@
 						<td class="hi_bottom_detail_2">http://www.pic.co.kr</td>
 					</tr>
 				</table>
+				<div class="hi_middle" id="hm02">
+					신라호텔 <br> <img src="../image/img1.jpg" width="800px"
+						height="400px" style="margin-top: 30px;" />
+				</div>
+
+				<table class="hi_bottom" id="hb02">
+					<tr>
+						<td class="hi_bottom_detail">주소:</td>
+						<td class="hi_bottom_detail_2">210 Pale San Vitores Road,
+							Tumon Bay, Guam 96913</td>
+						<td class="hi_bottom_detail">전화번호:</td>
+						<td class="hi_bottom_detail_2">+1-671-646-9171</td>
+					</tr>
+					<tr>
+						<td class="hi_bottom_detail">팩스:</td>
+						<td class="hi_bottom_detail_2">+1-671-648-2474</td>
+						<td class="hi_bottom_detail">홈페이지:</td>
+						<td class="hi_bottom_detail_2">http://www.pic.co.kr</td>
+					</tr>
+				</table>
+
 			</div>
+
+
+			<script type="text/javascript">
+			function schedule_btn2(e) {
+
+				var ld_detail_top = document.getElementsByClassName('ld_detail_top')
+				var ld_detail_bottom = document.getElementsByClassName('ld_detail_bottom')
+				for (var i = 0; i < ld_detail_top.length; i++) {
+					if (e == ld_detail_top[i].id) {
+						ld_detail_top[i].style.display = "block";
+						ld_detail_bottom[i].style.display = "block";
+					} else {
+						ld_detail_top[i].style.display = "none";
+						ld_detail_bottom[i].style.display = "none";
+					}
+
+				}
+			}
+		</script>
+
+
 			<h2 style="font-size: 16px; margin: 20px 0px 0px 10px;">02 여행지정보</h2>
 			<div class="landmark_des">
-				<div class="ld_date">1일차 : 9/18</div>
-				<div class="ld_des">인천,블라디보스톡</div>
-				<div class="ld_btn">>></div>
-				<div class="ld_detail">
-					<div class="ld_detail_top">자연과 함께 호흡하는 곳, 루스키섬 트레킹</div>
-					<div class="ld_detail_bottom">
+				<div class="hi_top">
+					<button class="btn_class" onclick="schedule_btn2('lt01')">루스키섬 트레킹</button>
+					<button class="btn_class" onclick="schedule_btn2('lt02')">신라호텔</button>
+				</div>
+				<div class="ld_detail" >
+					<div class="ld_detail_top"  id="lt01">자연과 함께 호흡하는 곳, 루스키섬 트레킹</div>
+					<div class="ld_detail_bottom" >
+						<img src="../image/img1.jpg" width="27%" height="200"
+							style="border-radius: 5px; margin: 15px;"> <img
+							src="../image/img2.jpg" width="27%" height="200"
+							style="border-radius: 5px; margin: 15px;"> <img
+							src="../image/img3.jpg" width="27%" height="200"
+							style="border-radius: 5px; margin: 15px;"> <br>루스키섬은
+						블라디보스톡에서 몇 km 떨어진 곳에 위치한 섬으로 동해 연안에 위치하고 있습니다. <br> 섬의 이름은
+						동시베리아를 통치한 니콜라이 아무르 스키의 이름을 따서 붙여졌다고 합니다. <br>더불어 이 섬은 소련 시절,
+						군사기지로서 이용되었다는 점에서 상트페테르부르크의 크론슈타트에 비교되어 극동의 크론슈타트라고도 불리고 있습니다. <br>이곳은
+						지역 특성상 안개가 자주 끼기 때문에, 겨울에는 안개가 너무 심해 섬이 잘 보이지 않을 수도 있습니다.
+					</div>
+					
+					<div class="ld_detail_top"  id="lt02">산정호수</div>
+					<div class="ld_detail_bottom" >
 						<img src="../image/img1.jpg" width="27%" height="200"
 							style="border-radius: 5px; margin: 15px;"> <img
 							src="../image/img2.jpg" width="27%" height="200"
@@ -221,6 +298,8 @@
 						지역 특성상 안개가 자주 끼기 때문에, 겨울에는 안개가 너무 심해 섬이 잘 보이지 않을 수도 있습니다.
 					</div>
 				</div>
+				
+			
 
 			</div>
 
