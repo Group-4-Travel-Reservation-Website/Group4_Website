@@ -30,6 +30,56 @@ function checkSelectAll()  {
 	  }
 
 	}
+	
+//유효성 검사	  
+function check(){
+	var re2 = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+	// 이메일이 적합한지 검사할 정규식
+	var exp = /^[0-9]+$/;
+	
+	var res_birth=document.getElementById("res_birth");
+	var res_email = document.getElementById("res_email");
+	var de_name = document.getElementById("de_name");
+	var de_birth = document.getElementById("de_birth");
+	
+	if(!(res_birth.value.length==8)){
+		alert("생년월일을 입력해주세요");
+		res_birth.focus();
+		return false;
+	}
+	
+	if(!(res_birth.value.match(exp))){
+		alert("숫자만 입력해주세요");
+		res_birth.focus();
+		return false;
+	}
+	if(de_birth.value.match(exp)){
+		alert("숫자만 입력해주세요");
+		de_birth.focus();
+		return false;
+	}
+	if(res_email.value.length==0){
+		alert("이메일을 입력해주세요");
+		res_email.focus();
+		return false;
+	}
+	if(!(res_email.value.match(re2))){
+		alert("정확한 이메일 형식을 입력해주세요");
+		res_email.focus();
+		return false;
+	}
+	if(de_name.value.length==0){
+		alert("이름을 입력해주세요");
+		de_name.focus();
+		return false;
+	}
+	if(!(de_birth.value.length==8)){
+		alert("생년월일을 입력해주세요");
+		de_birth.focus();
+		return false;
+	}
+	
+}	  
 </script>
 
 
@@ -125,7 +175,7 @@ function checkSelectAll()  {
 				<td class="res_table_td_1" style="width: 200px;"><span
 					style="color: red;">*</span> 생년월일</td>
 				<td class="res_table_td_2"><input class="input_table"
-					type="text" name="birth" value="예)20180101" /></td>
+					type="text" name="birth" placeholder="예)20180101" id="res_birth" /></td>
 				<td class="res_table_td_1" style="width: 200px;"><span
 					style="color: red;">*</span> 성별</td>
 				<td class="res_table_td_2"><input type="radio" name="gender"
@@ -137,9 +187,7 @@ function checkSelectAll()  {
 					style="color: red;">*</span> 이메일</td>
 				<td colspan="5" class="res_table_td_2"><input
 					class="input_table" type="text" name="email_id"
-					placeholder="이메일 아이디" />&nbsp;&nbsp;@&nbsp;&nbsp;<input
-					class="input_table" type="text" name="email_domain"
-					placeholder="이메일 도메인" /></td>
+					placeholder="이메일 " id="res_email" style="width: 250px;""/></td>
 			</tr>
 			<tr>
 				<td class="res_table_td_1" style="width: 200px;">* 휴대폰 번호</td>
@@ -201,7 +249,7 @@ function checkSelectAll()  {
 				<td class="res_table_td_1" rowspan="2" width="100px">성인1</td>
 				<td class="res_table_td_2" width="700px"><span
 					style="color: red;">*</span>이름(한글)&nbsp;&nbsp;<input
-					class="input_table" type="text" name="korean_name" />&nbsp;
+					class="input_table" type="text" name="korean_name" id="de_name"/>&nbsp;
 					&nbsp;영문&nbsp;&nbsp; <input class="input_table" type="text"
 					name="english_first_name" />&nbsp;&nbsp;<input class="input_table"
 					type="text" name="english_last_name" />
@@ -212,7 +260,7 @@ function checkSelectAll()  {
 			<tr>
 				<td class="res_table_td_2" colspan="3"><span
 					style="color: red;">*</span>생년월일&nbsp;&nbsp;<input
-					class="input_table" type="text" name="birth" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+					class="input_table" type="text" name="birth" id="de_birth"/>&nbsp;&nbsp;&nbsp;&nbsp;<span
 					style="color: red;">*</span>성별&nbsp;&nbsp;&nbsp;&nbsp;<input
 					type="radio" name="gender" value="남자" checked>남
 					&nbsp;&nbsp; <input type="radio" name="gender" value="여자">여
@@ -341,7 +389,7 @@ function checkSelectAll()  {
 		</div>
 	</div>
 	<div id="reservation_btn">
-		<input type="button" id="r_ok" value="예약하기" />
+		<input type="button" id="r_ok" value="예약하기" onclick="check()" />
 	</div>
 </div>
 
